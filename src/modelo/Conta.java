@@ -72,6 +72,7 @@ public abstract class Conta {
 
     @Override
     public String toString() {
-        return "modelo.Conta ID: " + id + ", Saldo: " + saldo + ", Titular: " + titular.getNome() + ", Data de Abertura: " + dataAbertura;
+        return "modelo.Conta ID: " + id + ", Saldo: " + saldo + ", Titular: " + titular.getNome() + ", " +
+                "Data de Abertura: " + dataAbertura;
     }
 }
