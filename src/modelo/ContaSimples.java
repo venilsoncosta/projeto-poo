@@ -1,4 +1,6 @@
-public class ContaSimples extends Conta{
+package modelo;
+
+public class ContaSimples extends Conta {
 
 
     public ContaSimples(Correntista titular) {

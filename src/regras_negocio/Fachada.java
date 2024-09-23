@@ -1,5 +1,7 @@
+package regras_negocio;
+
+import modelo.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Fachada {
@@ -56,7 +58,7 @@ public class Fachada {
     public static void apagarConta(int id) throws Exception {
         Conta conta = buscarConta(id);
         if (conta.getSaldo() != 0) {
-            throw new Exception("Conta com saldo diferente de zero.");
+            throw new Exception("modelo.Conta com saldo diferente de zero.");
         }
         contas.remove(conta);
     }
@@ -89,7 +91,7 @@ public class Fachada {
         return contas.stream()
                 .filter(c -> c.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new Exception("Conta não encontrada."));
+                .orElseThrow(() -> new Exception("modelo.Conta não encontrada."));
     }
 
     // Busca um correntista pelo CPF.
@@ -100,7 +102,7 @@ public class Fachada {
         return correntistas.stream()
                 .filter(c -> c.getCpf().equals(cpf))
                 .findFirst()
-                .orElseThrow(() -> new Exception("Correntista não encontrado."));
+                .orElseThrow(() -> new Exception("modelo.Correntista não encontrado."));
     }
 
     // Verifica a autenticação de um correntista com CPF e senha.

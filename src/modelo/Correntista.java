@@ -1,3 +1,5 @@
+package modelo;
+
 public class Correntista {
     private final String cpf;  // CPF imutável
     private String nome;

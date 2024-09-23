@@ -1,4 +1,6 @@
-public class ContaEspecial extends Conta{
+package modelo;
+
+public class ContaEspecial extends Conta {
 
     private double limite;
 

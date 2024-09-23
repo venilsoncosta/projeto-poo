@@ -1,3 +1,5 @@
+package modelo;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +34,7 @@ public abstract class Conta {
 
     public void removerCorrentista(Correntista correntista) {
         if (!correntistas.remove(correntista)) {
-            throw new IllegalArgumentException("Correntista não encontrado");
+            throw new IllegalArgumentException("modelo.Correntista não encontrado");
         }
     }
 
@@ -70,6 +72,6 @@ public abstract class Conta {
 
     @Override
     public String toString() {
-        return "Conta ID: " + id + ", Saldo: " + saldo + ", Titular: " + titular.getNome() + ", Data de Abertura: " + dataAbertura;
+        return "modelo.Conta ID: " + id + ", Saldo: " + saldo + ", Titular: " + titular.getNome() + ", Data de Abertura: " + dataAbertura;
     }
 }
