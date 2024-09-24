@@ -19,7 +19,7 @@ public class MainInterface extends JFrame {
 
     public MainInterface() {
         setTitle("Sistema Bancário");
-        setSize(400, 600); // Aumentado para acomodar novos elementos
+        setSize(600, 800); // Aumentado para acomodar novos elementos
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
@@ -97,7 +97,7 @@ public class MainInterface extends JFrame {
 
         // Área de Saída
         outputArea = new JTextArea();
-        outputArea.setBounds(20, 340, 350, 200);
+        outputArea.setBounds(20, 340, 450, 300);
         outputArea.setEditable(false);
         add(outputArea);
 
