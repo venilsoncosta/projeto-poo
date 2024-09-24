@@ -112,6 +112,7 @@ public class MainInterface extends JFrame {
         try {
             Fachada.criarCorrentista(cpf, nome, senha);
             outputArea.setText("Correntista cadastrado com sucesso: " + nome);
+            limparCampos(); // Limpa os campos após o cadastro
         } catch (Exception e) {
             outputArea.setText("Erro ao cadastrar correntista: " + e.getMessage());
         }
@@ -140,6 +141,7 @@ public class MainInterface extends JFrame {
                 Conta novaConta = new ContaSimples(correntista);
                 Fachada.criarConta(novaConta); // Chama o método da fachada para criar a conta
                 outputArea.setText("Conta simples criada com sucesso para o correntista: " + correntista.getNome());
+                //limparCampos(); // Limpa os campos após a criação
             } else if ("especial".equalsIgnoreCase(tipoConta)) {
                 // Pergunta pelo limite da conta especial
                 String limiteInput = JOptionPane.showInputDialog("Digite o limite da conta especial (mínimo 50):");
@@ -147,6 +149,7 @@ public class MainInterface extends JFrame {
                 Conta novaConta = new ContaEspecial(correntista, limite);
                 Fachada.criarConta(novaConta); // Chama o método da fachada para criar a conta
                 outputArea.setText("Conta especial criada com sucesso para o correntista: " + correntista.getNome());
+                //limparCampos(); // Limpa os campos após a criação
             } else {
                 outputArea.setText("Tipo de conta inválido. Digite 'simples' ou 'especial'.");
             }
@@ -155,7 +158,12 @@ public class MainInterface extends JFrame {
         }
     }
 
-
+    private void limparCampos() {
+        cpfField.setText("");
+        nomeField.setText("");
+        senhaField.setText("");
+        contaIdField.setText("");
+    }
 
     private void listarCorrentistasEContas() {
         StringBuilder output = new StringBuilder();
