@@ -16,6 +16,15 @@ public class Correntista {
         this.senha = senha;  // Sugestão: armazenar senha de forma segura
     }
 
+    @Override
+    public String toString() {
+        return "Correntista{" +
+                "cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
+
+
     // Construtor vazio - caso a gente precise. tava dando erro, então fiz o cpf recebendo nada. ai parou. rs
     public Correntista() {
         this.cpf = "";
