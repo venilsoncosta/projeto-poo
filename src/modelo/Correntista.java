@@ -69,8 +69,8 @@ public class Correntista {
     }
 
     private void validarSenha(String senha) {
-        if (senha == null || senha.length() < 4) {
-            throw new IllegalArgumentException("A senha deve ter pelo menos 4 caracteres.");
+         if ((senha== null) || (!senha.matches("\\d{4}"))){
+            throw new IllegalArgumentException("Inserção inválida: a senha deve conter 4 dígitos");
         }
     }
 }
