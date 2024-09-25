@@ -30,6 +30,10 @@ public class Fachada {
         if (repositorio.localizarCorrentistaPorCpf(cpf) != null) {
             throw new Exception("Correntista já cadastrado: " + nome);
         }
+        
+        if ((senha== null) || (!senha.matches("\\d{4}"))) {
+            throw new Exception("Inserção inválida: a senha deve conter 4 dígitos");
+        }
 
         // Cria o correntista
         Correntista correntista = new Correntista(cpf, nome, senha);
